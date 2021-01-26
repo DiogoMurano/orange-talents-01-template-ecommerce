@@ -1,13 +1,13 @@
-package br.com.zup.ecommerce.mercadolivre;
+package br.com.zup.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MercadoLivreApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MercadoLivreApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
