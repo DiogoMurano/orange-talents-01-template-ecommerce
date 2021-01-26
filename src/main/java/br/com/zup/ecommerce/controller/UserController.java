@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(path = "/user")
+@RequestMapping("/user")
 public class UserController {
 
     private final UserRepository repository;
