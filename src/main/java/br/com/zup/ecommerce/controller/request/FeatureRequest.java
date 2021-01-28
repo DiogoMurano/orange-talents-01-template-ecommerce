@@ -1,22 +1,26 @@
 package br.com.zup.ecommerce.controller.request;
 
 import br.com.zup.ecommerce.model.product.Feature;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.validation.constraints.NotBlank;
 
 public class FeatureRequest {
 
-    private String key;
+    @JsonProperty
+    @NotBlank
+    private final String key;
 
-    private String value;
+    @JsonProperty
+    @NotBlank
+    private final String value;
 
-    public Feature createModel() {
+    public FeatureRequest(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public Feature toModel() {
         return new Feature(key, value);
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public String getValue() {
-        return value;
     }
 }

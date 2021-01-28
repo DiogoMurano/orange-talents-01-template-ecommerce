@@ -1,23 +1,18 @@
 package br.com.zup.ecommerce.controller.response;
 
 import br.com.zup.ecommerce.model.product.Feature;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FeatureResponse {
 
-    private String name;
+    @JsonProperty
+    private final String name;
 
-    private String description;
+    @JsonProperty
+    private final String description;
 
     public FeatureResponse(Feature feature) {
         this.name = feature.getName();
         this.description = feature.getDescription();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

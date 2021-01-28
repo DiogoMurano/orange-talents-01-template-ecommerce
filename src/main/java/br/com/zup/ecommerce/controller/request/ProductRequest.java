@@ -3,6 +3,7 @@ package br.com.zup.ecommerce.controller.request;
 import br.com.zup.ecommerce.model.product.Category;
 import br.com.zup.ecommerce.model.product.Product;
 import br.com.zup.ecommerce.model.user.User;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
@@ -16,52 +17,52 @@ import java.util.stream.Collectors;
 
 public class ProductRequest {
 
+    @JsonProperty
     @NotBlank
-    private String name;
+    private final String name;
 
+    @JsonProperty
     @NotNull
     @Positive
-    private BigDecimal value;
+    private final BigDecimal value;
 
+    @JsonProperty
     @NotNull
     @Positive
-    private int quantity;
+    private final int quantity;
 
+    @JsonProperty
     @NotBlank
     @Size(max = 1000)
-    private String description;
+    private final String description;
 
+    @JsonProperty
     @OneToMany
     @NotNull
     @Size(min = 3)
-    private List<FeatureRequest> features = Collections.emptyList();
+    private final List<FeatureRequest> features;
 
+    @JsonProperty
     @NotNull
-    private String categoryName;
+    private final String categoryName;
 
-    public Product createModel(Category category, User user) {
-        return new Product(name, value, quantity, description, features.stream().map(FeatureRequest::createModel)
+    public ProductRequest(String name, BigDecimal value,
+                          int quantity, String description, List<FeatureRequest> features, String categoryName) {
+        this.name = name;
+        this.value = value;
+        this.quantity = quantity;
+        this.description = description;
+        this.features = features;
+        this.categoryName = categoryName;
+    }
+
+    public Product toModel(Category category, User user) {
+        return new Product(name, value, quantity, description, features.stream().map(FeatureRequest::toModel)
                 .collect(Collectors.toList()), category, user);
     }
 
     public String getName() {
         return name;
-    }
-
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public List<FeatureRequest> getFeatures() {
-        return features;
     }
 
     public String getCategoryName() {

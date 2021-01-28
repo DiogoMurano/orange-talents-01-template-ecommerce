@@ -28,7 +28,7 @@ public class CategoryController {
     public ResponseEntity<CategoryResponse> createNewCategory(@RequestBody @Valid CategoryRequest request) {
         Category motherCategory = repository.findByName(request.getMotherCategory()).orElse(null);
 
-        Category category = new Category(request.getName(), motherCategory);
+        Category category = request.toModel(motherCategory);
         repository.save(category);
 
         return ResponseEntity.ok(new CategoryResponse(category));

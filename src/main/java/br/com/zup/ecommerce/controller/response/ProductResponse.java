@@ -1,26 +1,34 @@
 package br.com.zup.ecommerce.controller.response;
 
 import br.com.zup.ecommerce.model.product.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductResponse {
-    
-    private Long id;
 
-    private String name;
+    @JsonProperty
+    private final Long id;
 
-    private BigDecimal value;
+    @JsonProperty
+    private final String name;
 
-    private int quantity;
+    @JsonProperty
+    private final BigDecimal value;
 
-    private String description;
+    @JsonProperty
+    private final int quantity;
 
-    private List<FeatureResponse> features;
+    @JsonProperty
+    private final String description;
 
-    private CategoryResponse category;
+    @JsonProperty
+    private final List<FeatureResponse> features;
+
+    @JsonProperty
+    private final CategoryResponse category;
 
     public ProductResponse(Product product) {
         this.id  = product.getId();
@@ -30,33 +38,5 @@ public class ProductResponse {
         this.description = product.getDescription();
         this.features = product.getFeatures().stream().map(FeatureResponse::new).collect(Collectors.toList());
         this.category = new CategoryResponse(product.getCategory());
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public List<FeatureResponse> getFeatures() {
-        return features;
-    }
-
-    public CategoryResponse getCategory() {
-        return category;
     }
 }

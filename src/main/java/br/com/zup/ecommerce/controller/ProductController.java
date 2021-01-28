@@ -42,7 +42,7 @@ public class ProductController {
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found."));
 
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Product product = request.createModel(category, user);
+        Product product = request.toModel(category, user);
 
         product.getFeatures().forEach(featureRepository::save);
         productRepository.save(product);

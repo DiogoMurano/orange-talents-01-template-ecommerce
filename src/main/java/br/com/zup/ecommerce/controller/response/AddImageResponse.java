@@ -1,23 +1,18 @@
 package br.com.zup.ecommerce.controller.response;
 
 import br.com.zup.ecommerce.model.product.ProductImage;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AddImageResponse {
 
-    private Long imageId;
+    @JsonProperty
+    private final Long imageId;
 
-    private String link;
+    @JsonProperty
+    private final String link;
 
     public AddImageResponse(ProductImage productImage) {
         this.imageId = productImage.getId();
         this.link = productImage.getLink();
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public Long getImageId() {
-        return imageId;
     }
 }
