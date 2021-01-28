@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.provider;
+package br.com.zup.ecommerce.provider.file;
 
 import org.springframework.web.multipart.MultipartFile;
 

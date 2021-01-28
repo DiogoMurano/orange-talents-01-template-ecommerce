@@ -4,7 +4,7 @@ import br.com.zup.ecommerce.controller.response.AddImageResponse;
 import br.com.zup.ecommerce.model.product.Product;
 import br.com.zup.ecommerce.model.product.ProductImage;
 import br.com.zup.ecommerce.model.user.User;
-import br.com.zup.ecommerce.provider.UploadImageProvider;
+import br.com.zup.ecommerce.provider.file.UploadImageProvider;
 import br.com.zup.ecommerce.repository.ProductImageRepository;
 import br.com.zup.ecommerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
