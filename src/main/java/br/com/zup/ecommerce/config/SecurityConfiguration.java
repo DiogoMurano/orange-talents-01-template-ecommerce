@@ -1,8 +1,8 @@
 package br.com.zup.ecommerce.config;
 
-import br.com.zup.ecommerce.security.AuthEntryPointToken;
-import br.com.zup.ecommerce.security.filter.AuthTokenFilter;
-import br.com.zup.ecommerce.security.service.UserDetailsServiceImpl;
+import br.com.zup.ecommerce.config.security.AuthEntryPointToken;
+import br.com.zup.ecommerce.config.security.filter.AuthTokenFilter;
+import br.com.zup.ecommerce.config.security.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

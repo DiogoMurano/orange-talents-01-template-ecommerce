@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.security.service;
+package br.com.zup.ecommerce.config.security.service;
 
 import br.com.zup.ecommerce.model.User;
 import io.jsonwebtoken.Jwts;

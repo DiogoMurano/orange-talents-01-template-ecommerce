@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.security.service;
+package br.com.zup.ecommerce.config.security.service;
 
 import br.com.zup.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

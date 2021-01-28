@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.security;
+package br.com.zup.ecommerce.config.security;
 
 import java.io.IOException;
 

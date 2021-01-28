@@ -34,13 +34,13 @@ public class ProductRequest {
     @OneToMany
     @NotNull
     @Size(min = 3)
-    private List<FeatureRequest> properties = Collections.emptyList();
+    private List<FeatureRequest> features = Collections.emptyList();
 
     @NotNull
     private String categoryName;
 
     public Product createModel(Category category, User user) {
-        return new Product(name, value, quantity, description, properties.stream().map(FeatureRequest::createModel)
+        return new Product(name, value, quantity, description, features.stream().map(FeatureRequest::createModel)
                 .collect(Collectors.toList()), category, user);
     }
 
@@ -60,8 +60,8 @@ public class ProductRequest {
         return description;
     }
 
-    public List<FeatureRequest> getProperties() {
-        return properties;
+    public List<FeatureRequest> getFeatures() {
+        return features;
     }
 
     public String getCategoryName() {

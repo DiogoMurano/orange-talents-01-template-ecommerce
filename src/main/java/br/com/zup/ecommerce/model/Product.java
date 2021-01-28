@@ -48,6 +48,10 @@ public class Product {
     @NotNull
     private User user;
 
+    @OneToMany
+    @NotNull
+    private List<ProductImage> images = Collections.emptyList();
+
     public Product(String name, BigDecimal value, int quantity, String description, List<Feature> features, Category category, User user) {
         this.name = name;
         this.value = value;
@@ -95,5 +99,9 @@ public class Product {
 
     public User getUser() {
         return user;
+    }
+
+    public List<ProductImage> getImages() {
+        return images;
     }
 }

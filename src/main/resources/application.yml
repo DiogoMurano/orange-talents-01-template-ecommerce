@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://localhost/ecommerce
     username: root
     password: 123456
+  profiles:
+    active: dev
 
   jpa:
     properties:

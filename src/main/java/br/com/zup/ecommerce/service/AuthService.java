@@ -5,7 +5,7 @@ import br.com.zup.ecommerce.controller.request.SignupRequest;
 import br.com.zup.ecommerce.controller.response.JwtResponse;
 import br.com.zup.ecommerce.model.User;
 import br.com.zup.ecommerce.repository.UserRepository;
-import br.com.zup.ecommerce.security.service.TokenService;
+import br.com.zup.ecommerce.config.security.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
