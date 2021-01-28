@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.repository;
 
-import br.com.zup.ecommerce.model.Feature;
+import br.com.zup.ecommerce.model.product.Feature;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

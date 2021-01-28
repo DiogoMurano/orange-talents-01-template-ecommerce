@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.response;
 
-import br.com.zup.ecommerce.model.Product;
+import br.com.zup.ecommerce.model.product.Product;
 
 import java.math.BigDecimal;
 import java.util.List;

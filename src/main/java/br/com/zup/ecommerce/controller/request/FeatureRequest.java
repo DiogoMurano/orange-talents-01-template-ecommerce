@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.request;
 
-import br.com.zup.ecommerce.model.Feature;
+import br.com.zup.ecommerce.model.product.Feature;
 
 public class FeatureRequest {
 

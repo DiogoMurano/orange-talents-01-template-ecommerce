@@ -3,7 +3,7 @@ package br.com.zup.ecommerce.service;
 import br.com.zup.ecommerce.controller.request.LoginRequest;
 import br.com.zup.ecommerce.controller.request.SignupRequest;
 import br.com.zup.ecommerce.controller.response.JwtResponse;
-import br.com.zup.ecommerce.model.User;
+import br.com.zup.ecommerce.model.user.User;
 import br.com.zup.ecommerce.repository.UserRepository;
 import br.com.zup.ecommerce.config.security.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;

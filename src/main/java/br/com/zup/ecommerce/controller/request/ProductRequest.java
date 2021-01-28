@@ -1,8 +1,8 @@
 package br.com.zup.ecommerce.controller.request;
 
-import br.com.zup.ecommerce.model.Category;
-import br.com.zup.ecommerce.model.Product;
-import br.com.zup.ecommerce.model.User;
+import br.com.zup.ecommerce.model.product.Category;
+import br.com.zup.ecommerce.model.product.Product;
+import br.com.zup.ecommerce.model.user.User;
 
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;

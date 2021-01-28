@@ -2,7 +2,7 @@ package br.com.zup.ecommerce.controller;
 
 import br.com.zup.ecommerce.controller.request.CategoryRequest;
 import br.com.zup.ecommerce.controller.response.CategoryResponse;
-import br.com.zup.ecommerce.model.Category;
+import br.com.zup.ecommerce.model.product.Category;
 import br.com.zup.ecommerce.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

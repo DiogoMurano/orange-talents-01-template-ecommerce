@@ -1,4 +1,6 @@
-package br.com.zup.ecommerce.model;
+package br.com.zup.ecommerce.model.product;
+
+import br.com.zup.ecommerce.model.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

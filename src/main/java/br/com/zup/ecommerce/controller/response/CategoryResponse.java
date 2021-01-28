@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.response;
 
-import br.com.zup.ecommerce.model.Category;
+import br.com.zup.ecommerce.model.product.Category;
 
 public class CategoryResponse {
 

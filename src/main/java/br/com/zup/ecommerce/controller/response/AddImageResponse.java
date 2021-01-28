@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.response;
 
-import br.com.zup.ecommerce.model.ProductImage;
+import br.com.zup.ecommerce.model.product.ProductImage;
 
 public class AddImageResponse {
 

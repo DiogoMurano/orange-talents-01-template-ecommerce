@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.model;
+package br.com.zup.ecommerce.model.user;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

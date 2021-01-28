@@ -1,4 +1,4 @@
-package br.com.zup.ecommerce.model;
+package br.com.zup.ecommerce.model.product;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.request;
 
-import br.com.zup.ecommerce.model.User;
+import br.com.zup.ecommerce.model.user.User;
 import br.com.zup.ecommerce.validation.UniqueValue;
 
 import javax.validation.constraints.Email;
