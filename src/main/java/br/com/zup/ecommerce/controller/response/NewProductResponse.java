@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProductResponse {
+public class NewProductResponse {
 
     @JsonProperty
     private final Long id;
@@ -30,7 +30,7 @@ public class ProductResponse {
     @JsonProperty
     private final CategoryResponse category;
 
-    public ProductResponse(Product product) {
+    public NewProductResponse(Product product) {
         this.id  = product.getId();
         this.name = product.getName();
         this.value = product.getValue();

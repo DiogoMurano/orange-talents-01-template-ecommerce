@@ -18,9 +18,12 @@ public class ProductImage {
     @NotBlank
     private String link;
 
-    public ProductImage(@NotNull Product product, @NotBlank String link) {
+    public ProductImage(Product product, String link) {
         this.product = product;
         this.link = link;
+    }
+
+    public ProductImage() {
     }
 
     public Long getId() {

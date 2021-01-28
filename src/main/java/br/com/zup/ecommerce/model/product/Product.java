@@ -44,15 +44,23 @@ public class Product {
     private Category category;
 
     @NotNull
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private final LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToOne
     @NotNull
     private User user;
 
-    @OneToMany
+    @OneToMany(mappedBy = "product")
     @NotNull
-    private List<ProductImage> images = Collections.emptyList();
+    private final List<ProductImage> images = Collections.emptyList();
+
+    @OneToMany(mappedBy = "product")
+    @NotNull
+    private final List<Review> reviews = Collections.emptyList();
+
+    @OneToMany(mappedBy = "product")
+    @NotNull
+    private final List<Ask> asks = Collections.emptyList();
 
     public Product(String name, BigDecimal value, int quantity, String description, List<Feature> features, Category category, User user) {
         this.name = name;
@@ -105,5 +113,13 @@ public class Product {
 
     public List<ProductImage> getImages() {
         return images;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public List<Ask> getAsks() {
+        return asks;
     }
 }
