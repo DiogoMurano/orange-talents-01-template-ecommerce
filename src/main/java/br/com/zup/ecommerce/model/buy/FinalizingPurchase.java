@@ -24,6 +24,10 @@ public class FinalizingPurchase {
     private GatewayType gatewayType;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
+    private PurchaseStatus purchaseStatus = PurchaseStatus.STARTED;
+
+    @NotNull
     @ManyToOne
     private Product product;
 
@@ -51,6 +55,10 @@ public class FinalizingPurchase {
 
     public GatewayType getGatewayType() {
         return gatewayType;
+    }
+
+    public PurchaseStatus getPurchaseStatus() {
+        return purchaseStatus;
     }
 
     public User getAuthor() {

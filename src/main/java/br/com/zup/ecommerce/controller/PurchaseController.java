@@ -7,6 +7,7 @@ import br.com.zup.ecommerce.model.user.User;
 import br.com.zup.ecommerce.provider.gateway.Gateway;
 import br.com.zup.ecommerce.provider.gateway.GatewayType;
 import br.com.zup.ecommerce.provider.gateway.PaymentGatewayProvider;
+import br.com.zup.ecommerce.provider.mail.Mail;
 import br.com.zup.ecommerce.provider.mail.MailProvider;
 import br.com.zup.ecommerce.repository.FinalizingPurchaseRepository;
 import br.com.zup.ecommerce.repository.ProductRepository;
@@ -58,6 +59,11 @@ public class PurchaseController {
 
         FinalizingPurchase purchase = request.toModel(gateway.getType(), product);
         purchaseRepository.save(purchase);
+
+        mailProvider.sendMail(new Mail("Um usuário iniciou uma compra!",
+                "O usuário iniciou o processo de compra", product.getUser().getLogin()));
+
+        productService.updateStock(product, request.getQuantity());
 
         return gatewayService.createGatewayRedirect(gateway, purchase, builder.build().toUri());
     }

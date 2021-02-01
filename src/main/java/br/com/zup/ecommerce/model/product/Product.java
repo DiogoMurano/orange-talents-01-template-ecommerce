@@ -1,6 +1,8 @@
 package br.com.zup.ecommerce.model.product;
 
 import br.com.zup.ecommerce.model.user.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -121,5 +123,12 @@ public class Product {
 
     public List<Ask> getAsks() {
         return asks;
+    }
+
+    public void removeQuantity(int quantity) {
+        if (this.quantity < quantity) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid quantity.");
+        }
+        this.quantity -= quantity;
     }
 }

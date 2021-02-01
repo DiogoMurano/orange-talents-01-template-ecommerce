@@ -29,6 +29,11 @@ public class ProductService {
         }
     }
 
+    public void updateStock(Product product, int quantity) {
+        product.removeQuantity(quantity);
+        productRepository.save(product);
+    }
+
     public Product saveOrUpdate(Product product) {
         return productRepository.save(product);
     }
