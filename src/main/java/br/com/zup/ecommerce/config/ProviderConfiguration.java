@@ -4,6 +4,7 @@ package br.com.zup.ecommerce.config;
 import br.com.zup.ecommerce.provider.file.CloudImageUpload;
 import br.com.zup.ecommerce.provider.file.FakeImageProvider;
 import br.com.zup.ecommerce.provider.file.UploadImageProvider;
+import br.com.zup.ecommerce.provider.gateway.PaymentGatewayProvider;
 import br.com.zup.ecommerce.provider.mail.FakeMailProvider;
 import br.com.zup.ecommerce.provider.mail.MailProvider;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +29,11 @@ public class ProviderConfiguration {
     @Bean
     public MailProvider mailProvider() {
         return new FakeMailProvider();
+    }
+
+    @Bean
+    public PaymentGatewayProvider gatewayProvider() {
+        return new PaymentGatewayProvider();
     }
 
 }
