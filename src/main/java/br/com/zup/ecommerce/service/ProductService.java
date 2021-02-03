@@ -23,6 +23,8 @@ public class ProductService {
     }
 
     public void checkAvailable(Product product, int quantity) {
+        System.out.println(product.getQuantity());
+        System.out.println(quantity);
         if (product.getQuantity() < quantity) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "This product doesn't have enough stock for this request.");

@@ -5,10 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -29,7 +26,7 @@ public class Product {
     private BigDecimal value;
 
     @NotNull
-    @Positive
+    @Min(0)
     private int quantity;
 
     @NotBlank
@@ -126,9 +123,18 @@ public class Product {
     }
 
     public void removeQuantity(int quantity) {
-        if (this.quantity < quantity) {
+        if (this.quantity - quantity < 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid quantity.");
         }
         this.quantity -= quantity;
+    }
+
+    @Override
+    public String toString() {
+        return " nome: " + name +
+                "\n valor: " + value +
+                "\n quantidade: " + quantity +
+                "\n descrição: " + description +
+                "\n categoria: " + category;
     }
 }

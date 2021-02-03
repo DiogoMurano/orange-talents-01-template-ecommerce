@@ -1,6 +1,6 @@
 package br.com.zup.ecommerce.controller.request;
 
-import br.com.zup.ecommerce.model.buy.FinalizingPurchase;
+import br.com.zup.ecommerce.model.buy.Purchase;
 import br.com.zup.ecommerce.model.product.Product;
 import br.com.zup.ecommerce.model.user.User;
 import br.com.zup.ecommerce.provider.gateway.GatewayType;
@@ -31,9 +31,9 @@ public class PurchaseRequest {
         this.paymentGateway = paymentGateway;
     }
 
-    public FinalizingPurchase toModel(GatewayType gatewayType, Product product) {
+    public Purchase toModel(GatewayType gatewayType, Product product) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return new FinalizingPurchase(quantity, gatewayType, product, user);
+        return new Purchase(quantity, gatewayType, product, user);
     }
 
     public Long getProductId() {

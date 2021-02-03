@@ -7,9 +7,11 @@ import br.com.zup.ecommerce.provider.gateway.GatewayType;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
+import java.util.Collections;
+import java.util.Set;
 
 @Entity
-public class FinalizingPurchase {
+public class Purchase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,14 +37,18 @@ public class FinalizingPurchase {
     @ManyToOne
     private User author;
 
-    public FinalizingPurchase(int quantity, GatewayType gatewayType, Product product, User author) {
+    @OneToMany
+    @NotNull
+    private Set<Payment> payments = Collections.emptySet();
+
+    public Purchase(int quantity, GatewayType gatewayType, Product product, User author) {
         this.quantity = quantity;
         this.gatewayType = gatewayType;
         this.product = product;
         this.author = author;
     }
 
-    public FinalizingPurchase() {
+    public Purchase() {
     }
 
     public Long getId() {
@@ -67,5 +73,18 @@ public class FinalizingPurchase {
 
     public Product getProduct() {
         return product;
+    }
+
+    public Set<Payment> getPayments() {
+        return payments;
+    }
+
+    @Override
+    public String toString() {
+        return " quantidade: " + quantity +
+                "\n método de pagamento: " + gatewayType +
+                "\n status: " + purchaseStatus +
+                "\n prooduto: " + product.toString() +
+                "\n autor: " + author;
     }
 }

@@ -1,9 +1,12 @@
 package br.com.zup.ecommerce.provider.gateway;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+@Component
 public class PaymentGatewayProvider {
 
     private final Set<Gateway> gateways;
